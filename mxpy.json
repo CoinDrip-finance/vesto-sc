@@ -1,0 +1,37 @@
+{
+  "configurations": {
+    "default": {
+      "proxy": "https://devnet-api.multiversx.com",
+      "chainID": "D"
+    },
+    "mainnet": {
+      "proxy": "https://gateway.multiversx.com",
+      "chainID": "1"
+    }
+  },
+  "contract": {
+    "deploy": {
+      "verbose": true,
+      "bytecode": "output/vesto.wasm",
+      "recall-nonce": true,
+      "pem": "wallet.pem",
+      "arguments": ["0x00000000000000000500d2714bd484dba7538f642c780ec9e691b1661926f844"],
+      "gas-limit": 59999999,
+      "send": true,
+      "outfile": "deploy-devnet.interaction.json",
+      "metadata-payable-by-sc": true
+    },
+    "upgrade": {
+      "verbose": true,
+      "bytecode": "output/vesto.wasm",
+      "recall-nonce": true,
+      "pem": "wallet.pem",
+      "arguments": ["0x00000000000000000500d2714bd484dba7538f642c780ec9e691b1661926f844"],
+      "gas-limit": 59999999,
+      "send": true,
+      "outfile": "deploy-devnet.interaction.json",
+      "metadata-payable-by-sc": true
+    }
+  },
+  "active": "default"
+}
