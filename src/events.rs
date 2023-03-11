@@ -19,5 +19,7 @@ pub trait EventsModule {
         #[indexed] address: &ManagedAddress,
         #[indexed] amount: &BigUint,
         #[indexed] stream_id: u64,
+        #[indexed] start_date: u64,
+        #[indexed] end_date: u64,
     );
 }  

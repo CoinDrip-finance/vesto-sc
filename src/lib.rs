@@ -56,7 +56,7 @@ pub trait VestoContract:
 
             to_be_vested += vesting_item.deposit.clone();
 
-            self.add_user_to_vesting_schedule_event(vesting_schedule_id, &vesting_item.recipient, &vesting_item.deposit, stream_id);
+            self.add_user_to_vesting_schedule_event(vesting_schedule_id, &vesting_item.recipient, &vesting_item.deposit, stream_id, vesting_item.start_time, vesting_item.end_time);
         }
 
         let new_vesting = VestingSchedule {
@@ -102,6 +102,6 @@ pub trait VestoContract:
 
         self.vesting_schedule_list(vesting_schedule_id).set(vesting_schedule);
 
-        self.add_user_to_vesting_schedule_event(vesting_schedule_id, &new_vesting_item.recipient, &new_vesting_item.deposit, stream_id);
+        self.add_user_to_vesting_schedule_event(vesting_schedule_id, &new_vesting_item.recipient, &new_vesting_item.deposit, stream_id, new_vesting_item.start_time, new_vesting_item.end_time);
     }
 }
